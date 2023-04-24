@@ -5,11 +5,7 @@ abstract class CurrencyState extends Equatable {
   List<Object> get props => [];
 }
 
-class CurrencyInitial extends CurrencyState {
-  final List<CurrencyRate> rates;
-
-  CurrencyInitial({required this.rates});
-}
+class CurrencyInitial extends CurrencyState {}
 
 class GetCurrencyRatesState extends CurrencyState {
   final List<CurrencyRate> rates;

@@ -1,6 +1,5 @@
 import 'package:currency_app/features/currency/domain/entities/currency_rate.dart';
 import 'package:decimal/decimal.dart';
-import 'package:equatable/equatable.dart';
 
 class CurrencyRateDTO extends CurrencyRate {
   const CurrencyRateDTO({required number, required date, required rate})
