@@ -11,7 +11,7 @@ class CurrencyRateInfo extends StatelessWidget {
     String info =
         "Latest evalution of currency rate to PLN: ${rate.rate} (Date: ${rate.date})";
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Container(
           decoration: BoxDecoration(
               border: Border.all(style: BorderStyle.solid),

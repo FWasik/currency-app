@@ -1,7 +1,9 @@
 import 'package:currency_app/features/currency/presentation/bloc/currency_bloc.dart';
 import 'package:currency_app/features/currency/presentation/widgets/currency_button.dart';
 import 'package:currency_app/features/currency/presentation/widgets/currency_rate_info.dart';
-import 'package:currency_app/features/currency/presentation/widgets/custom_chart.dart';
+import 'package:currency_app/features/currency/presentation/widgets/chart_rates.dart';
+import 'package:currency_app/features/currency/presentation/widgets/custom_dropdown.dart';
+import 'package:currency_app/features/currency/presentation/widgets/table_rates.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late TabController tabController;
+  String dropdownValue = "Chart";
 
   @override
   Widget build(BuildContext context) {
@@ -41,24 +43,31 @@ class _HomePageState extends State<HomePage> {
                       ],
                       borderRadius: const BorderRadius.all(Radius.circular(20)),
                       border: Border.all(style: BorderStyle.solid)),
-                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       const CurrencyButton(currency: "EUR"),
-                      const CurrencyButton(currency: "USD")
+                      const CurrencyButton(currency: "USD"),
                     ],
                   ),
                 ),
                 if (state is GetCurrencyRatesState) ...[
                   Expanded(
-                      child: ListView(
-                    children: [
-                      CurrencyRateInfo(
-                        rate: state.rates[state.rates.length - 1],
-                      ),
-                      CustomChart(rates: state.rates),
-                    ],
+                      child: Center(
+                    child: ListView(
+                      children: [
+                        CurrencyRateInfo(
+                          rate: state.rates[state.rates.length - 1],
+                        ),
+                        CustomDropdown(
+                            dropdownValue: dropdownValue,
+                            onArgumentChanged: handleArgumentChanged),
+                        dropdownValue == "Chart"
+                            ? ChartRates(rates: state.rates)
+                            : TableRates(rates: state.rates)
+                      ],
+                    ),
                   ))
                 ] else if (state is LoadingState) ...[
                   const Center(
@@ -79,5 +88,11 @@ class _HomePageState extends State<HomePage> {
             ),
           );
         }));
+  }
+
+  void handleArgumentChanged(String newDropdownValue) {
+    setState(() {
+      dropdownValue = newDropdownValue;
+    });
   }
 }
