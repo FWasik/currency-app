@@ -20,7 +20,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 12),
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
             border: Border.all(style: BorderStyle.solid),
             borderRadius: const BorderRadius.all(Radius.circular(20))),

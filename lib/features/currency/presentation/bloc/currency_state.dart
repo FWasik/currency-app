@@ -11,6 +11,18 @@ class GetCurrencyRatesState extends CurrencyState {
   final List<CurrencyRate> rates;
 
   GetCurrencyRatesState({required this.rates});
+
+  @override
+  List<Object> get props => [rates];
+}
+
+class ErrorState extends CurrencyState {
+  final String error;
+
+  ErrorState({required this.error});
+
+  @override
+  List<Object> get props => [error];
 }
 
 class LoadingState extends CurrencyState {}

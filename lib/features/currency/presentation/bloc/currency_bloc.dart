@@ -11,11 +11,16 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
 
   CurrencyBloc({required this.getUseCaseRates}) : super(CurrencyInitial()) {
     on<GetCurrencyRatesEvent>((event, emit) async {
-      emit(LoadingState());
-      List<CurrencyRate> rates =
-          await getUseCaseRates.call(currency: event.currency);
+      try {
+        emit(LoadingState());
 
-      emit(GetCurrencyRatesState(rates: rates));
+        List<CurrencyRate> rates =
+            await getUseCaseRates.call(currency: event.currency);
+
+        emit(GetCurrencyRatesState(rates: rates));
+      } on Exception catch (e) {
+        emit(ErrorState(error: e.toString()));
+      }
     });
   }
 }

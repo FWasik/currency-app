@@ -43,6 +43,7 @@ dependencies:
   intl: ^0.17.0
   graphic: ^2.1.0
   quiver: ^3.2.1
+  flutter_easyloading: ^3.0.5
 
 dev_dependencies:
   flutter_test:

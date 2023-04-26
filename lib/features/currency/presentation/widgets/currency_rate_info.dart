@@ -9,7 +9,7 @@ class CurrencyRateInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String info =
-        "Latest evalution of currency rate to PLN: ${rate.rate} (Date: ${rate.date})";
+        "Latest evaluation of currency rate to PLN: ${rate.rate} (Date: ${rate.date})";
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Container(
