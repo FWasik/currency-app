@@ -10,14 +10,14 @@ class CurrencyBloc extends Bloc<CurrencyEvent, CurrencyState> {
   GetCurrencyRates getUseCaseRates;
 
   CurrencyBloc({required this.getUseCaseRates}) : super(CurrencyInitial()) {
-    on<GetCurrencyRatesEvent>((event, emit) async {
+    on<FetchedRatesEvent>((event, emit) async {
       try {
         emit(LoadingState());
 
         List<CurrencyRate> rates =
             await getUseCaseRates.call(currency: event.currency);
 
-        emit(GetCurrencyRatesState(rates: rates.reversed.toList()));
+        emit(FetchedRatesState(rates: rates.reversed.toList()));
       } on Exception catch (e) {
         emit(ErrorState(error: e.toString()));
       }

@@ -7,10 +7,10 @@ abstract class CurrencyState extends Equatable {
 
 class CurrencyInitial extends CurrencyState {}
 
-class GetCurrencyRatesState extends CurrencyState {
+class FetchedRatesState extends CurrencyState {
   final List<CurrencyRate> rates;
 
-  GetCurrencyRatesState({required this.rates});
+  FetchedRatesState({required this.rates});
 
   @override
   List<Object> get props => [rates];

@@ -7,10 +7,10 @@ abstract class CurrencyEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GetCurrencyRatesEvent extends CurrencyEvent {
+class FetchedRatesEvent extends CurrencyEvent {
   final String currency;
 
-  const GetCurrencyRatesEvent({required this.currency});
+  const FetchedRatesEvent({required this.currency});
 
   @override
   List<Object> get props => [currency];
