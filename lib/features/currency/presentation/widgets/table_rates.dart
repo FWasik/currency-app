@@ -36,8 +36,7 @@ class TableRates extends StatelessWidget {
               ),
             ),
           ]),
-          ...rates.reversed
-              .toList()
+          ...rates
               .map((element) => TableRow(children: [
                     Center(
                       child: Padding(
