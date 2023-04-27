@@ -22,7 +22,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: SizedBox(
-        width: MediaQuery.of(context).size.width / 3,
+        width: MediaQuery.of(context).size.width / 2.6,
         child: DropdownButtonFormField(
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
