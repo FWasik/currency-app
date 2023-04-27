@@ -53,7 +53,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
         items: widget.options.map((String value) {
           return DropdownMenuItem<String>(
             value: value,
-            child: SizedBox(child: Text(value)),
+            child: Text(value),
           );
         }).toList(),
       ),
