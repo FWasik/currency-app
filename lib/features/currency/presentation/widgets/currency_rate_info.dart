@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CurrencyRateInfo extends StatelessWidget {
   final CurrencyRate rate;
-  final String chosenCurr;
+  final String? chosenCurr;
 
   const CurrencyRateInfo(
       {Key? key, required this.rate, required this.chosenCurr})
@@ -11,8 +11,6 @@ class CurrencyRateInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String info =
-        "Latest evaluation of currency $chosenCurr to PLN: ${rate.rate} (Date: ${rate.date})";
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Container(
@@ -22,9 +20,15 @@ class CurrencyRateInfo extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           height: 120,
           child: Center(
-              child: Text(
-            info,
-            style: const TextStyle(fontSize: 18),
+              child: RichText(
+            text: TextSpan(
+                text: "Latest evaluation of currency $chosenCurr to PLN: ",
+                style: const TextStyle(fontSize: 18),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: "${rate.rate} (Date: ${rate.date})",
+                      style: const TextStyle(fontWeight: FontWeight.bold))
+                ]),
           ))),
     );
   }
