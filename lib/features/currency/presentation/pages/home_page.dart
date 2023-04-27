@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(12),
             child: ListView(children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.symmetric(vertical: 12),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
