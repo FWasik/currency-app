@@ -14,14 +14,8 @@ class CurrencyRatesDataSource {
     Uri url = Uri.parse(
         'http://api.nbp.pl/api/exchangerates/rates/A/$currency/$fromDate/$today/');
 
-    try {
-      final response = await http.get(url);
+    final response = await http.get(url);
 
-      return jsonDecode(response.body);
-    } catch (e) {
-      print("Some error");
-
-      return null;
-    }
+    return jsonDecode(response.body);
   }
 }
