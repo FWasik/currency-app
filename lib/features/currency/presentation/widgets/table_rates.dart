@@ -9,56 +9,44 @@ class TableRates extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Table(
         border: TableBorder.all(
             borderRadius: const BorderRadius.all(Radius.circular(20)),
             width: 2,
             color: Colors.black),
         children: [
-          const TableRow(children: [
-            Center(
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  "Date",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Center(
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  "Rate",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ]),
+          TableRow(children: [_buildHeader("Dates"), _buildHeader("Rates")]),
           ...rates
               .map((element) => TableRow(children: [
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Text(
-                          element.date,
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Text(
-                          element.rate.toString(),
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    ),
+                    _buildCell(element.date),
+                    _buildCell(element.rate.toString())
                   ]))
               .toList()
         ],
+      ),
+    );
+  }
+
+  Widget _buildHeader(String text) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Text(
+          text,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCell(String text) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Text(
+          text,
+        ),
       ),
     );
   }
