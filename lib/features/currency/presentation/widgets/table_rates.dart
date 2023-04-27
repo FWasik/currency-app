@@ -13,7 +13,6 @@ class TableRates extends StatelessWidget {
       child: Table(
         border: TableBorder.all(
             borderRadius: const BorderRadius.all(Radius.circular(20)),
-            width: 2,
             color: Colors.black),
         children: [
           TableRow(children: [_buildHeader("Dates"), _buildHeader("Rates")]),
