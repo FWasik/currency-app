@@ -32,10 +32,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CurrencyBloc(
-          getUseCaseRates: GetCurrencyRates(
-              repository: CurrencyRateRepoImpl(
-                  currencyRatesDataSource: CurrencyRatesDataSource())))
-        ..add(const GetCurrencyRatesEvent(currency: "EUR")),
+        getUseCaseRates: GetCurrencyRates(
+            repository: CurrencyRateRepoImpl(
+                currencyRatesDataSource: CurrencyRatesDataSource())),
+      ),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
