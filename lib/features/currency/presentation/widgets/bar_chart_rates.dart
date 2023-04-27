@@ -17,7 +17,7 @@ class BarChartRates extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(20)),
               border: Border.all(style: BorderStyle.solid)),
-          height: 800,
+          height: 1000,
           child: SfCartesianChart(
               title: ChartTitle(
                   text: "Currency Rates",

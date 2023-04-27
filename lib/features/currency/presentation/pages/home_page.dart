@@ -39,12 +39,12 @@ class _HomePageState extends State<HomePage> {
               CustomDropdown(
                 dropdownValue: dropdownCurrValue,
                 onChanged: handleCurrencyChanged,
-                list: const ["EUR", "USD"],
+                options: const ["EUR", "USD"],
               ),
               CustomDropdown(
                 dropdownValue: dropdownPresentationValue,
                 onChanged: handlePresentationChanged,
-                list: const ["Bar Chart", "Line Chart", "Table"],
+                options: const ["Bar Chart", "Line Chart", "Table"],
               ),
             ],
           ),

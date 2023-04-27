@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class CustomDropdown extends StatefulWidget {
   String dropdownValue;
   final Function(String) onChanged;
-  final List<String> list;
+  final List<String> options;
 
   CustomDropdown(
       {Key? key,
       required this.dropdownValue,
       required this.onChanged,
-      required this.list})
+      required this.options})
       : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: SizedBox(
-        width: 160,
+        width: MediaQuery.of(context).size.width / 3,
         child: DropdownButtonFormField(
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
@@ -49,7 +49,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
             });
           },
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-          items: widget.list.map((String value) {
+          items: widget.options.map((String value) {
             return DropdownMenuItem<String>(
               value: value,
               child: Text(value),
