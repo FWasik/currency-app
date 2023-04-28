@@ -1,16 +1,28 @@
 # currency_app
 
-A new Flutter project.
+currency_app is an mobile application which displays latest rates of selected currency to PLN. There are two available currency to choose: USD and EUR. Rates are the average rates of the last 30 days. Rates are provided from [NBP_API](http://api.nbp.pl/). 
 
-## Getting Started
+App was created in Flutter framework and Bloc package. Also, app is based on Clean Architeture. 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies, packages and APIs
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* [Flutter](https://flutter.dev/)
+* [Bloc](https://pub.dev/packages/flutter_bloc)
+* [syncfusion_flutter_charts](https://pub.dev/packages/syncfusion_flutter_charts)
+* [NBP_API](http://api.nbp.pl/)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Overview
+
+First of all, let's take a look at project tree:
+
+![project_tree](assets/readme/project_tree.png)
+
+
+As mentiond, app is based on Clean Architeture pattern thus app is divided into, firstly, features. Here we have only one which is "currency". Furthermore, "currency" is divided into 3 folders, "data", "domain" and "presentation" which describe each layer of application. "Data" has 3 inner folders: "datasource" with "currency_rate_data_source.dart" file whose task is to get data from API and "models" and "repositories" which implement or extend classes from "domain" layer and folder, accordinally, "entities" and "repositories". Body of "currency_rate_data_source.dart":
+
+![data_source_code](assets/readme/data_source_code.png)
+
+
+
