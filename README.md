@@ -75,16 +75,16 @@ Example of screens from application:
   
 ![choosing_currency](assets/readme/choosing_currency.png)
 
-* Rates of currency as table:
+* Currency rates in the form of a table:
   
 ![rates_as_table](assets/readme/rates_as_table.png)
 
-* Rates of currency as line chart (scrollable horizotally):
+* Currency rates in the form of a line chart (horizontally scrolling):
 
 ![line_chart_1](assets/readme/line_chart_1.png)
 ![line_chart_2](assets/readme/line_chart_2.png)
 
-* Rates of currency as bar chart (scrollable vertically):
+* Currency rates in the form of a bar chart (vertically scrolling):
 
 ![bar_chart_1](assets/readme/bar_chart_1.png)
 ![bar_chart_2](assets/readme/bar_chart_2.png)
